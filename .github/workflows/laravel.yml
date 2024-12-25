@@ -23,11 +23,11 @@ jobs:
     - name: Clear Composer Cache
       run: composer clear-cache
 
-    - name: Update Dependencies
-      run: composer update --with-all-dependencies --prefer-dist
-
     - name: Install Dependencies
       run: composer install --no-scripts --prefer-dist
+
+    - name: Run Composer Scripts
+      run: composer run-script post-install-cmd
 
     - name: Generate Application Key
       run: php artisan key:generate
