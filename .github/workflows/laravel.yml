@@ -23,8 +23,8 @@ jobs:
     - name: Clear Composer Cache
       run: composer clear-cache
 
-    - name: Update Dependencies for PHP 8.0
-      run: composer update --no-scripts --prefer-dist
+    - name: Update Dependencies
+      run: composer update --with-all-dependencies --prefer-dist
 
     - name: Install Dependencies
       run: composer install --no-scripts --prefer-dist
